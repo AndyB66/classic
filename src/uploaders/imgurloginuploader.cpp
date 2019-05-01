@@ -23,7 +23,7 @@
 #define RESPONSE_TYPE_CSTR "response_type"
 #define TOKEN_CSTR		   "token"
 
-const QString ImgurLoginUploader::resPage = "qrc:/res/page.html";
+const QString ImgurLoginUploader::resPage = "qrc:///res/page.html";
 
 ImgurLoginUploader::ImgurLoginUploader(QWidget *parent, QSettings &settings) :
 	ImgurAnonUploader(parent, settings),
@@ -128,7 +128,7 @@ void ImgurLoginUploader::authorize()
 {
 	QUrl url("https://api.imgur.com/oauth2/authorize");
 	url.addQueryItem(CLIENT_ID_CSTR, IMGUR_CLIENT_ID);
-	url.addQueryItem(REDIRECT_URI_CSTR, resPage);
+//	url.addQueryItem(REDIRECT_URI_CSTR, resPage);
 	url.addQueryItem(RESPONSE_TYPE_CSTR, TOKEN_CSTR);
 	url.addQueryItem("state", "0");
 
@@ -166,15 +166,19 @@ void ImgurLoginUploader::pageFinished()
 				<< qMakePair(tr("Odmowa autoryzacji"), tr("Aplikacja <span class=\"accent green\">fotorelacjonusz</span> nie uzyskała dostępu do Twoich danych na Imgur."))
 				<< qMakePair(tr("Ok"),                 tr("Aplikacja <span class=\"accent green\">fotorelacjonusz</span> ma dostęp do Twoich danych na Imgur."))
 				<< qMakePair(tr("Błąd"),               tr("Podczas kontaktowania się z Imgur wystąpił błąd."));
-
+// TODO
+#if 0
 		frame->findFirstElement("#title").setInnerXml(titles[state].first);
 		frame->findFirstElement("#title_long").setInnerXml(titles[state].second);
 		frame->findFirstElement("#text").setInnerXml(values["error"]);
 		if (state != 1)
 			frame->findFirstElement("#buttons").setInnerXml("");
+#endif
 	}
 	else
 	{
+// TODO
+#if 0
 		QWebElement topbar = frame->findFirstElement("#topbar");
 		QWebElement header = frame->findFirstElement("#topbar > .header-center");
 		if (!topbar.isNull() && !header.isNull())
@@ -182,6 +186,7 @@ void ImgurLoginUploader::pageFinished()
 			topbar.setStyleProperty("min-width", "600px");
 			header.setStyleProperty("width", "600px");
 		}
+#endif
 	}
 }
 
