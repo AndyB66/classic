@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>src/web/ssc.js</file>
+        <file>src/web/imgurauth.js</file>
     </qresource>
 </RCC>
