@@ -8,8 +8,8 @@
 #include "networktransactionquery.h"
 #include "secrets.h"
 
-#include <QWebElement>
-#include <QWebFrame>
+//#include <QWebElement>
+#include <QWebEnginePage>
 #include <QDebug>
 #include <QNetworkReply>
 
@@ -32,7 +32,7 @@ ImgurLoginUploader::ImgurLoginUploader(QWidget *parent, QSettings &settings) :
 	ui->setupUi(this);
 	fixLayout(ui->formLayout);
 
-	ui->webView->page()->networkAccessManager()->setCookieJar(new NetworkCookieJar("imgur/cookies"));
+//	ui->webView->page()->networkAccessManager()->setCookieJar(new NetworkCookieJar("imgur/cookies"));
 	connect(ui->webView, SIGNAL(loadFinished(bool)), this, SLOT(pageFinished()));
 
 	manager.makeInput("imgur/refresh_token", &refreshToken);
@@ -137,7 +137,7 @@ void ImgurLoginUploader::authorize()
 
 void ImgurLoginUploader::pageFinished()
 {
-	QWebFrame *frame = ui->webView->page()->mainFrame();
+	QWebEnginePage *frame = ui->webView->page();
 //	qDebug() << ui->webView->url();
 	QUrl url = ui->webView->url();
 	if (url.toString().startsWith(resPage))

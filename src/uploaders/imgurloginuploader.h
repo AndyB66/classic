@@ -13,7 +13,7 @@
 
 #include "imguranonuploader.h"
 #include <QWidget>
-#include <QWebView>
+//#include <QWebView>
 
 namespace Ui {
 class ImgurLoginUploader;
