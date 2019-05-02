@@ -126,11 +126,17 @@ bool ImgurLoginUploader::checkToken()
 
 void ImgurLoginUploader::authorize()
 {
+
+//	QUrl url("https://api.imgur.com/oauth2/authorize");
+
+//	?client_id=YOUR_CLIENT_ID&response_type=REQUESTED_RESPONSE_TYPE&state=APPLICATION_STATE
+
+
 	QUrl url("https://api.imgur.com/oauth2/authorize");
 	url.addQueryItem(CLIENT_ID_CSTR, IMGUR_CLIENT_ID);
 //	url.addQueryItem(REDIRECT_URI_CSTR, resPage);
 	url.addQueryItem(RESPONSE_TYPE_CSTR, TOKEN_CSTR);
-	url.addQueryItem("state", "0");
+//	url.addQueryItem("state", "0");
 
 	ui->webView->load(url);
 }

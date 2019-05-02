@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>300</height>
+    <height>433</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,8 +17,23 @@
    <property name="fieldGrowthPolicy">
     <enum>QFormLayout::ExpandingFieldsGrow</enum>
    </property>
+   <property name="leftMargin">
+    <number>12</number>
+   </property>
    <item row="0" column="0" colspan="2">
     <widget class="QWebEngineView" name="webView" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>200</height>
+      </size>
+     </property>
      <property name="url" stdset="0">
       <url>
        <string>about:blank</string>
@@ -33,6 +48,7 @@
    <class>QWebEngineView</class>
    <extends>QWidget</extends>
    <header>QWebEngineView</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>
