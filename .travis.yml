@@ -58,3 +58,10 @@ matrix:
         - PATH="/opt/Qt/5.12.3/clang_64/bin:${PATH}"
         - QT_INSTALLER_DOWNLOAD_NAME="qt-unified-mac-x64-online.dmg"
         - QT_INSTALLER_VARS="${TRAVIS_BUILD_DIR}/ci/qt_installer_vars_mac.js"
+
+    - os: windows
+      env:
+        - EXE=fotorelacjonusz.exe
+        - PATH="/c/Qt/5.12.3/msvc2017_64/bin:${PATH}"
+        - QT_INSTALLER_DOWNLOAD_NAME="qt-unified-windows-x86-online.exe"
+        - QT_INSTALLER_VARS="${TRAVIS_BUILD_DIR}/ci/qt_installer_vars_win64.js"
