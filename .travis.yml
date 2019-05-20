@@ -8,13 +8,13 @@ install:
   # QtFtp
   - pushd third-party/qtftp
   - qmake CONFIG+=staticlib CONFIG+=c++11 CONFIG+=release
-  - make
+  - ${MAKE}
   - popd
 
   # QuaZIP
   - pushd third-party/quazip
   - qmake CONFIG+=staticlib CONFIG+=c++11 CONFIG+=release
-  - make
+  - ${MAKE}
   - popd
 
   # Fotorelacjonusz
@@ -22,7 +22,7 @@ install:
   - ci/compile_icon_set.sh
   - lrelease fotorelacjonusz.pro
   - qmake CONFIG+=release LIBS+=-lz
-  - make
+  - ${MAKE}
 
 script:
   - ${EXE} -v
@@ -58,6 +58,7 @@ matrix:
         - PATH="/opt/Qt/5.12.3/clang_64/bin:${PATH}"
         - QT_INSTALLER_DOWNLOAD_NAME="qt-unified-mac-x64-online.dmg"
         - QT_INSTALLER_VARS="${TRAVIS_BUILD_DIR}/ci/qt_installer_vars_mac.js"
+        - MAKE=make
 
     - os: windows
       env:
@@ -65,3 +66,4 @@ matrix:
         - PATH="/c/Qt/5.12.3/msvc2017_64/bin:${PATH}"
         - QT_INSTALLER_DOWNLOAD_NAME="qt-unified-windows-x86-online.exe"
         - QT_INSTALLER_VARS="${TRAVIS_BUILD_DIR}/ci/qt_installer_vars_win64.js"
+        - MAKE=nmake
