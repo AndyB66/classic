@@ -25,6 +25,10 @@ case "${TRAVIS_OS_NAME}" in
 		mv release/*.rpm "release/${PACKAGE_NAME}.rpm"
 		;;
 
+	windows)
+		windeployqt fotorelacjonusz.exe
+		;;
+
 esac
 
 travis_fold end "before_deploy.package"

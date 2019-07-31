@@ -12,4 +12,8 @@ case "${TRAVIS_OS_NAME}" in
 	linux)
 		docker run -it ${DOCKER_IMAGE} /build/fotorelacjonusz -v
 		;;
+
+	windows)
+		release/fotorelacjonusz.exe -v
+		;;
 esac
