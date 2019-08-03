@@ -8,6 +8,7 @@ TEMPLATE = app
 TARGET = fotorelacjonusz
 macx:TARGET = Fotorelacjonusz
 VERSION = 3.0.0
+win32:VERSION = 3.0.0.0
 
 # Used in CFBundleIdentifier in Info.plist on Mac
 QMAKE_TARGET_BUNDLE_PREFIX = org.forumpolskichwiezowcow
