@@ -32,6 +32,7 @@ DEFINES += PROGRAM_VERSION=\\\"$$VERSION\\\"
 QMAKE_CXXFLAGS_DEBUG += -rdynamic
 QMAKE_LFLAGS_DEBUG += -g -rdynamic
 QMAKE_CXXFLAGS_DEBUG -= -pipe
+msvc:QMAKE_CXXFLAGS += /permissive-
 
 INCLUDEPATH += \
 	src \
