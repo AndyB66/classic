@@ -25,4 +25,8 @@ private:
 template<>QVariant SettingsManager::Input<DisplaySlider>::toVariant() const;
 template<>void SettingsManager::Input<DisplaySlider>::fromVariant(QVariant variant);
 
+#ifdef _MSC_VER
+#include "displayslider.tpp"
+#endif
+
 #endif // DISPLAYSLIDER_H

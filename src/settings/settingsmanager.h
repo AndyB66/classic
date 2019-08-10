@@ -250,6 +250,9 @@ template<>void     SettingsManager::Input<QWidget>::fromVariant(QVariant variant
 template<>QVariant SettingsManager::Input<QMainWindow>::toVariant() const;
 template<>void     SettingsManager::Input<QMainWindow>::fromVariant(QVariant variant);
 
+#ifdef _MSC_VER
+#include "settingsmanager.tpp"
+#endif
 
 /*
 template<>QVariant SettingsManager::Field<>::toVariant() const;

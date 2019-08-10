@@ -1,6 +1,8 @@
 #include "displayslider.h"
 #include <QPainter>
 
+#include "displayslider.tpp"
+
 DisplaySlider::DisplaySlider(QWidget *parent) :
 	QSlider(parent),
 	m_format("%1"),
@@ -40,14 +42,4 @@ void DisplaySlider::paintEvent(QPaintEvent *ev)
 		p.drawRoundedRect(bounding, 5, 5);
 		p.drawText(QRect(QPoint(0, 0), size()), Qt::AlignCenter | Qt::AlignHCenter, QString(m_format).arg(value()), &bounding);
 	}
-}
-
-template<>QVariant SettingsManager::Input<DisplaySlider>::toVariant() const
-{
-	return object->value();
-}
-
-template<>void SettingsManager::Input<DisplaySlider>::fromVariant(QVariant variant)
-{
-	object->setValue(variant.toInt());
 }
