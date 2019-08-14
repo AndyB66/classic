@@ -6,9 +6,6 @@ echo Building Zlib
 echo -------------
 echo -------------
 pushd third-party\zlib-1.2.11 || goto :fail
-rem Basing on https://github.com/qbittorrent/qBittorrent/wiki/Compiling-with-MSVC-2017-x64-(static-linkage)#Compiling_Zlib
-sed -i -e "s|^CFLAGS\b.*|CFLAGS  = -nologo -O1 -Gy -Gw -GL -MT $(LOC)|" win32\Makefile.msc || goto :fail
-sed -i -e "s|^LDFLAGS\b.*|LDFLAGS = /NOLOGO /DYNAMICBASE /NXCOMPAT /LTCG /OPT:REF /OPT:ICF /MANIFEST:EMBED /INCREMENTAL:NO /NODEFAULTLIB:MSVCRT|" win32\Makefile.msc || goto :fail
 nmake -f win32/Makefile.msc AS=ml64 LOC="-DASMV -DASMINF -I." OBJA="inffasx64.obj gvmat64.obj inffas8664.obj"
 popd
 
