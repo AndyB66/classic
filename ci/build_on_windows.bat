@@ -39,6 +39,8 @@ lrelease fotorelacjonusz.pro || goto :fail
 qmake DEFINES+=QUAZIP_STATIC CONFIG+=release CONFIG+=c++11 INCLUDEPATH+=$$PWD\third-party\zlib-1.2.11 LIBS+="$$PWD\third-party\zlib-1.2.11\zlib.lib" LIBS+="$$PWD\third-party\qtftp\lib\Qt5Ftp.lib" LIBS+="$$PWD\third-party\quazip\quazip\release\quazip.lib" || goto :fail
 nmake || goto :fail
 
+windeployqt release\fotorelacjonusz.exe
+
 goto :eof
 
 :fail
