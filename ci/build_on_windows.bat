@@ -6,7 +6,8 @@ echo Building Zlib
 echo -------------
 echo -------------
 pushd third-party\zlib-1.2.11 || goto :fail
-nmake -f win32/Makefile.msc AS=ml64 LOC="-DASMV -DASMINF -I." OBJA="inffasx64.obj gvmat64.obj inffas8664.obj"
+if "%VCVARS%"=="x64" ( nmake -f win32/Makefile.msc AS=ml64 LOC="-DASMV -DASMINF -I." OBJA="inffasx64.obj gvmat64.obj inffas8664.obj" )
+if "%VCVARS%"=="x86" ( nmake -f win32/Makefile.msc LOC="-DASMV -DASMINF" OBJA="inffas32.obj match686.obj" )
 popd
 
 echo --------------
