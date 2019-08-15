@@ -43,11 +43,6 @@ LIBS += \
 	-L$$absolute_path("third-party/qtftp/lib", $$_PRO_FILE_PWD_) \
 	-L$$absolute_path("third-party/quazip/quazip", $$_PRO_FILE_PWD_)
 
-#win32 {
-#	LIBS += $$absolute_path("third-party/qtftp/lib/Qt5Ftp.lib", $$_PRO_FILE_PWD_)
-#	LIBS += $$absolute_path("third-party/quazip/quazip/release/quazip.lib", $$_PRO_FILE_PWD_)
-#}
-
 unix {
 	LIBS += -lquazip
 	LIBS += -lQt5Ftp
