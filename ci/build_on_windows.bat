@@ -44,7 +44,7 @@ echo -------------------------
 echo Deploying Fotorelacjonusz
 echo -------------------------
 echo -------------------------
-windeployqt --compiler-runtime --verbose 2 release\fotorelacjonusz.exe
+windeployqt --release --compiler-runtime --verbose 2 release\fotorelacjonusz.exe
 
 goto :eof
 
