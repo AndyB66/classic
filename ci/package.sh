@@ -26,7 +26,10 @@ case "${TRAVIS_OS_NAME}" in
 		;;
 
 	windows)
-		windeployqt fotorelacjonusz.exe
+		mv release Fotorelacjonusz
+		mkdir -p release
+		zip -r -v Fotorelacjonusz
+		mv Fotorelacjonusz.zip release
 		;;
 
 esac
