@@ -58,7 +58,7 @@ matrix:
         - INSTALL_QT=yes
         - QT_INSTALLER_DOWNLOAD_NAME="qt-unified-windows-x86-online.exe"
         - QT_INSTALLER_VARS="${TRAVIS_BUILD_DIR}/ci/qt_installer_vars_win_x64.js"
-        - PATH="/c/Qt/5.12.6/msvc2017_64/bin:/c/Program Files (x86)/Windows Kits/10/Redist/ucrt/DLLs/x64:${PATH}"
+        - PATH="/c/Qt/5.12.6/msvc2017_64/bin:/c/Program Files (x86)/Windows Kits/15/Redist/ucrt/DLLs/x64:${PATH}"
         - VCVARS="x64"
 
     # 32-bit
@@ -67,5 +67,5 @@ matrix:
         - INSTALL_QT=yes
         - QT_INSTALLER_DOWNLOAD_NAME="qt-unified-windows-x86-online.exe"
         - QT_INSTALLER_VARS="${TRAVIS_BUILD_DIR}/ci/qt_installer_vars_win_x86.js"
-        - PATH="/c/Qt/5.12.6/msvc2017/bin:/c/Program Files (x86)/Windows Kits/10/Redist/ucrt/DLLs/x86:${PATH}"
+        - PATH="/c/Qt/5.12.6/msvc2017/bin:/c/Program Files (x86)/Windows Kits/15/Redist/ucrt/DLLs/x86:${PATH}"
         - VCVARS="x86"
