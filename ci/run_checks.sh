@@ -14,6 +14,6 @@ case "${TRAVIS_OS_NAME}" in
 		;;
 
 	windows)
-		release/fotorelacjonusz.exe -v
+		./run_checks_on_windows.bat ${VCVARS}
 		;;
 esac
