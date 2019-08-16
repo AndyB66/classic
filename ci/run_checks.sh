@@ -14,7 +14,11 @@ case "${TRAVIS_OS_NAME}" in
 		;;
 
 	windows)
+		echo "---"
 		ls release
+		echo "---"
+		ls "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build"
+		echo "---"
 		ci/run_checks_on_windows.bat ${VCVARS}
 		;;
 esac
