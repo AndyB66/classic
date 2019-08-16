@@ -14,6 +14,7 @@ case "${TRAVIS_OS_NAME}" in
 		;;
 
 	windows)
-		./run_checks_on_windows.bat ${VCVARS}
+		ls release
+		ci/run_checks_on_windows.bat ${VCVARS}
 		;;
 esac
