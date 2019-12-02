@@ -49,6 +49,16 @@ release\fotorelacjonusz.exe -v
 
 echo -------------------------
 echo -------------------------
+echo Predeploying
+echo -------------------------
+echo -------------------------
+rename release release1
+mkdir release
+copy release1\fotorelacjonusz.exe release
+dir /w release
+
+echo -------------------------
+echo -------------------------
 echo Deploying Fotorelacjonusz
 echo -------------------------
 echo -------------------------
