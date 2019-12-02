@@ -54,15 +54,13 @@ echo -------------------------
 echo -------------------------
 rename release release1
 mkdir release
-copy release1\fotorelacjonusz.exe release
-dir /w release
 
 echo -------------------------
 echo -------------------------
 echo Deploying Fotorelacjonusz
 echo -------------------------
 echo -------------------------
-windeployqt --release --compiler-runtime --verbose 2 release\fotorelacjonusz.exe
+windeployqt --release --compiler-runtime --verbose 2 --dir release release1\fotorelacjonusz.exe
 
 goto :eof
 
