@@ -6,9 +6,11 @@ echo Trying AGAIN
 echo -------------------------
 echo -------------------------
 
+dir /n
+
 cd release
-rm "*.cpp"
-rm "*.obj"
+rem del "*.cpp"
+rem del "*.obj"
 echo -------------------------
 dir /n
 echo -------------------------
