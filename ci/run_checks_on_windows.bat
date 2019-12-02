@@ -8,7 +8,7 @@ echo -------------------------
 
 pushd release
 echo -------------------------
-dir
+dir /n
 echo -------------------------
 fotorelacjonusz.exe -v
 echo -------------------------
