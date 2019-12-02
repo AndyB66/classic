@@ -41,6 +41,14 @@ nmake || goto :fail
 
 echo -------------------------
 echo -------------------------
+echo Trying
+echo -------------------------
+echo -------------------------
+
+release\fotorelacjonusz.exe -v
+
+echo -------------------------
+echo -------------------------
 echo Deploying Fotorelacjonusz
 echo -------------------------
 echo -------------------------
