@@ -50,6 +50,14 @@ windeployqt --release --compiler-runtime --verbose 2 release\fotorelacjonusz.exe
 echo -------------------------
 dumpbin /imports release\fotorelacjonusz.exe
 
+echo -------------------------
+echo -------------------------
+echo Trying
+echo -------------------------
+echo -------------------------
+
+release\fotorelacjonusz.exe -v
+
 goto :eof
 
 :fail
