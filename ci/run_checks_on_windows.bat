@@ -6,10 +6,8 @@ echo Trying AGAIN
 echo -------------------------
 echo -------------------------
 
-pushd release
+cd release
 echo -------------------------
 dir /n
 echo -------------------------
 fotorelacjonusz.exe -v
-echo -------------------------
-popd
