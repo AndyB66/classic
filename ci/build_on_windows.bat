@@ -47,20 +47,28 @@ echo -------------------------
 
 release\fotorelacjonusz.exe -v
 
-echo -------------------------
-echo -------------------------
-echo Predeploying
-echo -------------------------
-echo -------------------------
-rename release release1
-mkdir release
+rem echo -------------------------
+rem echo -------------------------
+rem echo Predeploying
+rem echo -------------------------
+rem echo -------------------------
+rem rename release release1
+rem mkdir release
 
 echo -------------------------
 echo -------------------------
 echo Deploying Fotorelacjonusz
 echo -------------------------
 echo -------------------------
-windeployqt --release --compiler-runtime --verbose 2 --dir release release1\fotorelacjonusz.exe
+pushd release
+dir /n
+del "*.cpp"
+del "*.obj"
+dir /n
+
+windeployqt --release --compiler-runtime --verbose 2 fotorelacjonusz.exe
+rem windeployqt --release --compiler-runtime --verbose 2 --dir release release1\fotorelacjonusz.exe
+popd
 
 goto :eof
 
