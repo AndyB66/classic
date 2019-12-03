@@ -41,22 +41,6 @@ nmake || goto :fail
 
 echo -------------------------
 echo -------------------------
-echo Trying
-echo -------------------------
-echo -------------------------
-
-release\fotorelacjonusz.exe -v
-
-rem echo -------------------------
-rem echo -------------------------
-rem echo Predeploying
-rem echo -------------------------
-rem echo -------------------------
-rem rename release release1
-rem mkdir release
-
-echo -------------------------
-echo -------------------------
 echo Deploying Fotorelacjonusz
 echo -------------------------
 echo -------------------------
