@@ -41,12 +41,12 @@ LIBS += \
 
 win32 {
 	INCLUDEPATH += third-party/zlib
-	LIBS += -lquazip1
+	LIBS += -lquazip1-qt5
 	LIBS += -lQt5Ftp
 }
 
 unix {
-	LIBS += -lquazip
+	LIBS += -lquazip1-qt5
 	LIBS += -lQt5Ftp
 }
 
