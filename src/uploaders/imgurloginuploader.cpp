@@ -6,8 +6,6 @@
 #include "networktransactionquery.h"
 #include "secrets.h"
 
-#include <QWebElement>
-#include <QWebFrame>
 #include <QDebug>
 #include <QNetworkReply>
 
