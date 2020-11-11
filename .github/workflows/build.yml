@@ -63,7 +63,7 @@ jobs:
         if: '! matrix.docker'
         uses: jurplel/install-qt-action@v2
         with:
-          version: "5.12.10"
+          version: "5.15.1"
           target: desktop
 
       - name: Process translations
