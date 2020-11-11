@@ -11,6 +11,8 @@ class ImgurLoginUploader : public ImgurAnonUploader
 {
 	Q_OBJECT
 
+	QOAuth2AuthorizationCodeFlow oauth2;
+
 public:
 	explicit ImgurLoginUploader(QWidget *parent, QSettings &settings);
 	~ImgurLoginUploader();
