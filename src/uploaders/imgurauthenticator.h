@@ -5,6 +5,9 @@
 class ImgurAuthenticator
 {
 	Q_OBJECT
+
+	QOAuth2AuthorizationCodeFlow oauth2;
+
 public:
 	ImgurAuthenticator();
 };
