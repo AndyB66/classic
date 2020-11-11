@@ -8,6 +8,8 @@
 
 #include <QDebug>
 #include <QNetworkReply>
+#include <QtCore>
+#include <QtNetworkAuth>
 
 #define CLIENT_ID_CSTR     "client_id"
 #define CLIENT_SECRET_CSTR "client_secret"
@@ -184,4 +186,34 @@ void ImgurLoginUploader::pageFinished()
 void ImgurLoginUploader::setAuthorization(NetworkTransaction *tr)
 {
 	tr->setRawHeader("Authorization", QString("Bearer " + accessToken).toAscii());
+}
+
+void ImgurLoginUploader::requestAuthorization()
+{
+	auto callbackPort = 1235;
+	auto callbackHandler = new QOAuthHttpServerReplyHandler(callbackPort, this);
+
+}
+
+
+
+RedditWrapper::RedditWrapper(QObject *parent) : QObject(parent)
+{
+
+	oauth2.setReplyHandler(replyHandler);
+	oauth2.setAuthorizationUrl(QUrl("https://www.reddit.com/api/v1/authorize"));
+	oauth2.setAccessTokenUrl(QUrl("https://www.reddit.com/api/v1/access_token"));
+	oauth2.setScope("identity read");
+
+	connect(&oauth2, &QOAuth2AuthorizationCodeFlow::statusChanged, [=](
+			QAbstractOAuth::Status status) {
+		if (status == QAbstractOAuth::Status::Granted)
+			emit authenticated();
+	});
+	oauth2.setModifyParametersFunction([&](QAbstractOAuth::Stage stage, QVariantMap *parameters) {
+		if (stage == QAbstractOAuth::Stage::RequestingAuthorization && isPermanent())
+			parameters->insert("duration", "permanent");
+	});
+	connect(&oauth2, &QOAuth2AuthorizationCodeFlow::authorizeWithBrowser,
+			&QDesktopServices::openUrl);
 }

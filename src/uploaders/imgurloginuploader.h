@@ -20,6 +20,8 @@ public:
 	virtual bool init(int imageNumber);
 	virtual QString uploadImage(QString filePath, QIODevice *image);
 
+	void requestAuthorization();
+
 protected:
 	bool checkToken();
 	void authorize();
