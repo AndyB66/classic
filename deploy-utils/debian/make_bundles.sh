@@ -5,9 +5,6 @@ set -ex
 pushd ${0%/*}
 
 trunk_dir=`readlink -f ../..`
-release_dir="$trunk_dir/release"
-
-mkdir -p $release_dir
 
 mkdir -p debian/DEBIAN
 mkdir -p debian/usr/bin/
@@ -44,7 +41,5 @@ lintian fotorelacjonusz_*.deb
 rm -r debian
 
 fakeroot alien --to-rpm fotorelacjonusz_*.deb
-
-mv *.deb *.rpm $release_dir
 
 popd
