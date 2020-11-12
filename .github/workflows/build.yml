@@ -76,13 +76,13 @@ jobs:
         run: |
           qmake CONFIG+=staticlib CONFIG+=c++11 CONFIG+=release
           make
-        working-directory: ./third-party/qtftp
+        working-directory: ./third-party/qtftp/src
 
       - name: Build QuaZIP
         run: |
           qmake CONFIG+=staticlib CONFIG+=c++11 CONFIG+=release LIBS+=-lz
           make
-        working-directory: ./third-party/quazip
+        working-directory: ./third-party/quazip/quazip
 
       - name: Build Fotorelacjonusz
         run: |
